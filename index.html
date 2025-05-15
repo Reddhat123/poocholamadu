@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poocholamadu - The Village of Heritage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Internal CSS with Animations -->
+    <style>
+        :root {
+
+            --secondary-color: #f8f1e5;
+            --accent-color: #e67e22;
+        }
+
+        body {
+            font-family: "Bricolage Grotesque", sans-serif;
+            background-color: var(--secondary-color);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Animation */
+        .navbar {
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(44, 94, 26, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Hero Section Animation */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease both;
+        }
+
+        .hero-section p {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-section .btn {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        /* Section Title Animation */
+        .section-title {
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section-title.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            animation: expandLine 0.8s ease 0.5s forwards;
+            transform-origin: center;
+            transform: scaleX(0) translateX(-50%);
+        }
+
+       
+
+        /* Culture Section Animation */
+        .heritage-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .heritage-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .heritage-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .heritage-item:hover .heritage-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Testimonial Animation */
+        .testimonial-card {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-card.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03) !important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gallery Animation */
+        .gallery-img {
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .gallery-img.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03) !important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        /* Button Animation */
+        .btn-village {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-village:hover {
+            background-color: #d35400;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn-village:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-village::after {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.4s;
+            background-color: var(--accent-color);
+        }
+
+        .btn-village:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+        /* Footer Animation */
+        .footer a {
+            position: relative;
+        }
+
+        .footer a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .footer a:hover::after {
+            width: 100%;
+        }
+
+        /* Form Animation */
+        .form-control {
+            transition: all 0.3s ease;
+            border: 1px solid #ddd;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(230, 126, 34, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expandLine {
+            from {
+                transform: scaleX(0) translateX(-50%);
+            }
+
+            to {
+                transform: scaleX(1) translateX(-50%);
+            }
+        }
+
+        /* Scroll Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in {
+            opacity: 1;
+        }
+
+        .slide-up {
+            transform: translateY(0) !important;
+        }
+
+        .scale-in {
+            transform: scale(1) !important;
+        }
+
+        /* button1 */
+
+        /* From Uiverse.io by Madflows */
+        .button {
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+            padding: 0 2rem;
+            border-radius: 1.5rem;
+            background: #3d3a4e;
+            background-size: 400%;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover::before {
+            transform: scaleX(1);
+        }
+
+        .button-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(82.3deg,
+                    rgba(150, 93, 233, 1) 10.8%,
+                    rgba(99, 88, 238, 1) 94.3%);
+            transition: all 0.475s;
+        }
+
+        /* map */
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .map-container:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* For mobile devices */
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+                margin-top: 20px;
+            }
+        }
+        /* cards */
+        
+.card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1 class="mb-0">Poocholamadu</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#culture">Culture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Welcome to Poocholamadu</h1>
+            <p class="lead mb-5">A serene village where tradition meets nature's beauty</p>
+            <a href="#about">
+                <button class="button">
+                    <span class="button-content">Explore our Village</span>
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title animate-on-scroll">About Our Village</h2>
+            <div class="row">
+                <div class="col-lg-6 animate-on-scroll">
+                    <p class="lead">Poocholamadu is a picturesque village nestled in the heart of nature, known for its
+                        rich cultural heritage and warm community.</p>
+                    <p>Founded centuries ago, our village has maintained its traditional values while embracing
+                        progress. The name "Poocholamadu" reflects our deep connection with the land and our ancestors.
+                    </p>
+                    <p>With lush green fields, ancient temples, and a close-knit community, Poocholamadu offers a
+                        glimpse into authentic rural life that's becoming rare in today's fast-paced world.</p>
+                    <a href="#culture" class="btn btn-village mt-3">Discover Our Culture</a>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <div class="map-container" style="height: 400px; border-radius: 10px; overflow: hidden;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.264918547677!2d75.97293074054288!3d11.066158306402842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64c64f2a3711f%3A0x72b5f14ced651be2!2sPoocholamad%2C%20Kannamangalam%2C%20Kerala%20676304!5e0!3m2!1sen!2sin!4v1747288184319!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title animate-on-scroll">Village Highlights</h2>
+            <div class="row">
+                <div class="col-md-4">
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="" style="width:100%;height:100%;">
+                        <div class="card__content bg-black">
+                            <p class="card__title text-light">Agriculture</p>
+                            <p class="card__description text-light">Our fertile lands produce abundant crops, sustaining both our
+                                village
+                                and neighboring communities.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80 alt="" style="
+                            width:100%;height:100%;">
+                        <div class="card__content bg-black">
+                            <p class="card__title text-light">Handicrafts</p>
+                            <p class="card__description text-light">Traditional artisans create beautiful handicrafts using
+                                techniques
+                                passed down through generations. </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            alt="" style="width:100%;height:100%;">
+                        <div class="card__content bg-black">
+                            <p class="card__title text-light">Festivals</p>
+                            <p class="card__description text-light">Our vibrant festivals celebrate the seasons, harvests, and our
+                                rich cultural heritage.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="culture-section py-5">
+        <div class="container">
+            <h2 class="text-center section-title animate-on-scroll">Our Cultural Heritage</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="heritage-item animate-on-scroll" style="transition-delay: 0.1s">
+                        <div class="heritage-icon text-center">
+                            <i class="bi bi-house-door-fill"></i>
+                        </div>
+                        <h4 class="text-center">Traditional Homes</h4>
+                        <p class="text-center">Our village architecture reflects sustainable practices using locally
+                            sourced materials, designed to stay cool in summer and warm in winter.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="heritage-item animate-on-scroll" style="transition-delay: 0.2s">
+                        <div class="heritage-icon text-center">
+                            <i class="bi bi-music-note-beamed"></i>
+                        </div>
+                        <h4 class="text-center">Folk Arts</h4>
+                        <p class="text-center">Traditional music, dance, and storytelling forms that have been preserved
+                            for centuries, performed during festivals and special occasions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="heritage-item animate-on-scroll" style="transition-delay: 0.3s">
+                        <div class="heritage-icon text-center">
+                            <i class="bi bi-basket-fill"></i>
+                        </div>
+                        <h4 class="text-center">Culinary Traditions</h4>
+                        <p class="text-center">Unique recipes using locally grown ingredients, prepared with traditional
+                            methods that enhance both flavor and nutrition.</p><img src="" alt=""
+                            style="background-image: url();w">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title animate-on-scroll">What People Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.1s">
+                        <p>"Poocholamadu's hospitality is unmatched. The villagers welcomed me like family and shared
+                            their beautiful traditions with me."</p>
+                        <div class="testimonial-author">- Rajesh Kumar, Travel Writer</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.2s">
+                        <p>"The craftsmanship of Poocholamadu's artisans is extraordinary. Each piece tells a story of
+                            the village's heritage."</p>
+                        <div class="testimonial-author">- Priya Nair, Cultural Anthropologist</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.3s">
+                        <p>"Visiting Poocholamadu was like stepping back in time to a simpler, more authentic way of
+                            living."</p>
+                        <div class="testimonial-author">- Arun Menon, Photographer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title animate-on-scroll">Village Gallery</h2>
+            <div class="row g-3">
+                <div class="col-md-4 col-6">
+                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="Village Scene" class="img-fluid rounded gallery-img animate-on-scroll"
+                        style="transition-delay: 0.1s">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="Handicrafts" class="img-fluid rounded gallery-img animate-on-scroll"
+                        style="transition-delay: 0.2s">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="Agriculture" class="img-fluid rounded gallery-img animate-on-scroll"
+                        style="transition-delay: 0.3s">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="Village Life" class="img-fluid rounded gallery-img animate-on-scroll"
+                        style="transition-delay: 0.4s">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="Festival" class="img-fluid rounded gallery-img animate-on-scroll"
+                        style="transition-delay: 0.5s">
+                </div>
+                <div class="col-md-4 col-6">
+                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                        alt="Traditional Art" class="img-fluid rounded gallery-img animate-on-scroll"
+                        style="transition-delay: 0.6s">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title animate-on-scroll">Visit Us</h2>
+            <div class="row">
+                <div class="col-lg-6 animate-on-scroll">
+                    <h4>Contact Information</h4>
+                    <p><strong>Village Head:</strong> Mr. Ramesh Kumar</p>
+                    <p><strong>Contact Number:</strong> +91 XXXXXXXXXX</p>
+                    <p><strong>Email:</strong> contact@poocholamadu.com</p>
+                    <p><strong>Address:</strong> Poocholamadu Village, District, State - PINCODE</p>
+
+                    <h4 class="mt-4">How to Reach</h4>
+                    <p>The nearest railway station is XYZ, about 30km from the village. Regular buses and private
+                        vehicles are available from the station.</p>
+                </div>
+                <div class="col-lg-6 animate-on-scroll">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-village">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 animate-on-scroll">
+                    <h5>Poocholamadu</h5>
+                    <p>The Village of Heritage</p>
+                    <p>Preserving traditions, embracing the future.</p>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a style="text-decoration: none;color: black; " href="#home">Home</a></li>
+                        <li><a style="text-decoration: none;color: black; " href="#about">About</a></li>
+                        <li><a style="text-decoration: none;color: black; " href="#culture">Culture</a></li>
+                        <li><a style="text-decoration: none;color: black; " href="#gallery">Gallery</a></li>
+                        <li><a style="text-decoration: none;color: black; " href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <h5>Connect With Us</h5>
+                    <p>Follow us on social media to stay updated about village events and news.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4" style="background-color: rgba(255,255,255,0.1);">
+            <div class="text-center pt-3">
+                <p class="mb-0">&copy; 2025 Poocholamadu Village. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <!-- Animation Script -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll animation
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementPosition < windowHeight - elementVisible) {
+                    element.classList.add('fade-in');
+
+                    if (element.classList.contains('feature-card') ||
+                        element.classList.contains('heritage-item')) {
+                        element.classList.add('slide-up');
+                    }
+
+                    if (element.classList.contains('testimonial-card') ||
+                        element.classList.contains('gallery-img')) {
+                        element.classList.add('scale-in');
+                    }
+
+                    // Animate section titles
+                    if (element.classList.contains('section-title')) {
+                        element.classList.add('animated');
+                    }
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
