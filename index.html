@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poocholamadu Village - Official Website</title>
   <meta name="description" content="Welcome to Poocholamadu Village - Explore our heritage, culture, and community">
   <meta name="author" content="Poocholamadu Village">
-  
+
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="Poocholamadu Village - Official Website">
   <meta property="og:description" content="Explore the heritage, culture, and community of Poocholamadu Village">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
-  
+
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@lovable_dev">
   <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap">
-  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
+
   <style>
     /* Custom CSS */
     :root {
@@ -39,50 +46,58 @@
       --border-color: #333;
       --card-bg: #252525;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     body {
-      font-family: 'Poppins', sans-serif;
+      
       background-color: var(--dark-bg);
       color: var(--text-color);
       line-height: 1.6;
+      font-family: "Bricolage Grotesque", sans-serif;
+
     }
-    
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
       margin-bottom: 1rem;
       color: var(--accent-color);
+      font-weight: bold;
     }
-    
+
     a {
       color: var(--accent-color);
       text-decoration: none;
       transition: all 0.3s ease;
     }
-    
+
     a:hover {
       color: var(--highlight-color);
     }
-    
+
     .section-padding {
       padding: 5rem 0;
     }
-    
+
     .section-title {
       text-align: center;
       margin-bottom: 3rem;
       position: relative;
     }
-    
+
     .section-title h2 {
       display: inline-block;
       position: relative;
@@ -90,32 +105,33 @@
       padding: 0 1rem;
       font-size: 2.5rem;
     }
-    
+
     /* Navbar */
     .navbar {
       background-color: rgba(18, 18, 18, 0.95) !important;
       padding: 1rem 0;
       transition: all 0.3s ease;
     }
-    
+
     .navbar-brand {
-      font-family: 'Playfair Display', serif;
+      font-family: "Lato", sans-serif;
       font-weight: 700;
       font-size: 1.5rem;
       color: var(--accent-color) !important;
     }
-    
+
     .nav-link {
       color: var(--text-color) !important;
       margin: 0 0.5rem;
       position: relative;
       font-weight: 500;
     }
-    
-    .nav-link:hover, .nav-link:focus {
+
+    .nav-link:hover,
+    .nav-link:focus {
       color: var(--accent-color) !important;
     }
-    
+
     .nav-link::before {
       content: '';
       position: absolute;
@@ -126,11 +142,11 @@
       background-color: var(--accent-color);
       transition: width 0.3s ease;
     }
-    
+
     .nav-link:hover::before {
       width: 100%;
     }
-    
+
     /* Hero Section */
     #hero {
       background-color: var(--dark-bg);
@@ -141,30 +157,26 @@
       justify-content: center;
       text-align: center;
     }
-    
+
     .hero-content {
       z-index: 2;
       max-width: 800px;
       margin: 0 auto;
     }
-    
+
     .hero-title {
       font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
       color: var(--text-color);
     }
-    
-    .hero-accent {
-      color: var(--accent-color);
-    }
-    
+
     .hero-subtitle {
       font-size: 1.5rem;
       margin-bottom: 2rem;
       color: var(--muted-text);
     }
-    
+
     .hero-carousel {
       position: absolute;
       top: 0;
@@ -173,59 +185,34 @@
       bottom: 0;
       z-index: 1;
     }
-    
+
     .carousel-item img {
       object-fit: cover;
       width: 100%;
       height: 100vh;
       filter: brightness(0.3);
     }
-    
-    .hero-btn {
-      background-color: var(--accent-color);
-      color: var(--dark-bg);
-      font-weight: 600;
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      margin: 0 0.5rem 1rem;
-      transition: all 0.3s ease;
-      border: 2px solid var(--accent-color);
-    }
-    
-    .hero-btn:hover {
-      background-color: transparent;
-      color: var(--accent-color);
-    }
-    
-    .hero-btn-outline {
-      background-color: transparent;
-      color: var(--accent-color);
-      border: 2px solid var(--accent-color);
-    }
-    
-    .hero-btn-outline:hover {
-      background-color: var(--accent-color);
-      color: var(--dark-bg);
-    }
-    
+
+  
+
     /* About Section */
     #about {
       background-color: var(--muted-bg);
     }
-    
+
     .about-image {
       position: relative;
       border-radius: 8px;
       overflow: hidden;
       height: 400px;
     }
-    
+
     .about-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    
+
     .about-image::after {
       content: '';
       position: absolute;
@@ -236,19 +223,19 @@
       background: linear-gradient(to top, var(--dark-bg), transparent);
       opacity: 0.6;
     }
-    
+
     .about-info-box {
       background-color: var(--card-bg);
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     /* Highlights Section */
     #highlights {
       background-color: var(--dark-bg);
     }
-    
+
     .highlight-card {
       background-color: var(--card-bg);
       border-radius: 8px;
@@ -258,32 +245,32 @@
       height: 100%;
       border: 1px solid var(--border-color);
     }
-    
+
     .highlight-card:hover {
       transform: translateY(-5px);
       border-color: var(--accent-color);
     }
-    
+
     .highlight-image {
       height: 200px;
       overflow: hidden;
     }
-    
+
     .highlight-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    
+
     .highlight-card:hover .highlight-image img {
       transform: scale(1.1);
     }
-    
+
     .highlight-content {
       padding: 1.5rem;
     }
-    
+
     .highlight-tag {
       display: inline-block;
       padding: 0.25rem 0.75rem;
@@ -294,25 +281,25 @@
       font-weight: 600;
       margin-bottom: 1rem;
     }
-    
+
     /* Gallery Section */
     #gallery {
       background-color: var(--muted-bg);
     }
-    
+
     .gallery-intro {
       text-align: center;
       max-width: 700px;
       margin: 0 auto 3rem;
     }
-    
+
     .gallery-filter {
       display: flex;
       justify-content: center;
       margin-bottom: 2rem;
       flex-wrap: wrap;
     }
-    
+
     .gallery-filter-btn {
       background-color: transparent;
       border: 1px solid var(--border-color);
@@ -324,61 +311,61 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
-    .gallery-filter-btn.active, 
+
+    .gallery-filter-btn.active,
     .gallery-filter-btn:hover {
       background-color: var(--accent-color);
       color: var(--dark-bg);
       border-color: var(--accent-color);
     }
-    
+
     .gallery-item {
       padding: 0.5rem;
     }
-    
+
     .gallery-item-inner {
       position: relative;
       overflow: hidden;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    
-    .gallery-item img, 
+
+    .gallery-item img,
     .gallery-item video {
       width: 100%;
       height: 250px;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    
-    .gallery-item:hover img, 
+
+    .gallery-item:hover img,
     .gallery-item:hover video {
       transform: scale(1.1);
     }
-    
+
     .gallery-item-caption {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
       padding: 1rem;
       color: var(--text-color);
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.3s ease;
     }
-    
+
     .gallery-item:hover .gallery-item-caption {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     /* Businesses Section */
     #businesses {
       background-color: var(--dark-bg);
     }
-    
+
     .business-card {
       background-color: var(--card-bg);
       border-radius: 8px;
@@ -388,12 +375,12 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .business-card:hover {
       transform: translateY(-5px);
       border-color: var(--accent-color);
     }
-    
+
     .business-category {
       display: inline-block;
       background-color: var(--accent-color);
@@ -404,17 +391,17 @@
       border-radius: 50px;
       margin-bottom: 0.75rem;
     }
-    
+
     .business-divider {
       border-top: 1px solid var(--border-color);
       margin: 1rem 0;
     }
-    
+
     /* People Section */
     #people {
       background-color: var(--muted-bg);
     }
-    
+
     .person-card {
       background-color: var(--card-bg);
       border-radius: 8px;
@@ -424,32 +411,32 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       height: 100%;
     }
-    
+
     .person-card:hover {
       transform: translateY(-5px);
       border-color: var(--accent-color);
     }
-    
+
     .person-image {
       height: 250px;
       overflow: hidden;
     }
-    
+
     .person-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    
+
     .person-card:hover .person-image img {
       transform: scale(1.1);
     }
-    
+
     .person-content {
       padding: 1.5rem;
     }
-    
+
     .person-role {
       display: inline-block;
       padding: 0.25rem 0.75rem;
@@ -460,12 +447,12 @@
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    
-    
+
+
     .person-social {
       margin-top: 1rem;
     }
-    
+
     .person-social a {
       display: inline-block;
       width: 32px;
@@ -478,17 +465,17 @@
       margin-right: 0.5rem;
       transition: all 0.3s ease;
     }
-    
+
     .person-social a:hover {
       background-color: var(--accent-color);
       color: var(--dark-bg);
     }
-    
+
     /* Facilities Section */
     #facilities {
       background-color: var(--dark-bg);
     }
-    
+
     .facility-card {
       background-color: var(--card-bg);
       border-radius: 8px;
@@ -498,28 +485,28 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .facility-card:hover {
       border-color: var(--accent-color);
       transform: translateY(-5px);
     }
-    
+
     .facility-info {
       margin-top: 1rem;
       font-size: 0.9rem;
     }
-    
+
     .facility-label {
       color: var(--highlight-color);
       font-weight: 600;
       margin-right: 0.5rem;
     }
-    
+
     /* Contact Section */
     #contact {
       background-color: var(--muted-bg);
     }
-    
+
     .contact-card {
       background-color: var(--card-bg);
       border-radius: 8px;
@@ -527,12 +514,12 @@
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .contact-info-item {
       display: flex;
       margin-bottom: 1.5rem;
     }
-    
+
     .contact-info-icon {
       width: 40px;
       height: 40px;
@@ -545,19 +532,19 @@
       flex-shrink: 0;
       margin-right: 1rem;
     }
-    
+
     .form-control {
       background-color: var(--dark-bg) !important;
       border: 1px solid var(--border-color) !important;
       color: var(--text-color) !important;
       padding: 0.75rem !important;
     }
-    
+
     .form-control:focus {
       box-shadow: none !important;
       border-color: var(--accent-color) !important;
     }
-    
+
     .travel-card {
       background-color: var(--card-bg);
       border-radius: 8px;
@@ -566,34 +553,34 @@
       height: 100%;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     /* Footer */
     #footer {
       background-color: var(--dark-bg);
       padding: 5rem 0 2rem;
     }
-    
+
     .footer-title {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .footer-link {
       display: block;
       margin-bottom: 0.75rem;
       color: var(--text-color);
     }
-    
+
     .footer-link:hover {
       color: var(--accent-color);
       padding-left: 5px;
     }
-    
+
     .footer-social {
       display: flex;
       margin-top: 1.5rem;
     }
-    
+
     .footer-social a {
       display: flex;
       align-items: center;
@@ -606,19 +593,19 @@
       margin-right: 0.75rem;
       transition: all 0.3s ease;
     }
-    
+
     .footer-social a:hover {
       background-color: var(--accent-color);
       color: var(--dark-bg);
       transform: translateY(-3px);
     }
-    
+
     .footer-bottom {
       border-top: 1px solid var(--border-color);
       padding-top: 1.5rem;
       margin-top: 4rem;
     }
-    
+
     .back-to-top {
       position: fixed;
       bottom: 30px;
@@ -636,48 +623,91 @@
       visibility: hidden;
       transition: all 0.3s ease;
     }
-    
+
     .back-to-top.active {
       opacity: 1;
       visibility: visible;
     }
-    
+
     .back-to-top:hover {
       background-color: var(--highlight-color);
       transform: translateY(-5px);
     }
-    
+
     /* Responsive */
     @media (max-width: 991px) {
       .hero-title {
         font-size: 2.8rem;
       }
-      
+
       .hero-subtitle {
         font-size: 1.2rem;
       }
-      
+
       .section-title h2 {
         font-size: 2rem;
       }
     }
-    
+
     @media (max-width: 767px) {
       .hero-title {
         font-size: 2.2rem;
       }
-      
+
       .hero-subtitle {
         font-size: 1rem;
       }
-      
+
       .section-title h2 {
         font-size: 1.8rem;
       }
-      
+
       .section-padding {
         padding: 3rem 0;
       }
+    }
+
+    /* From Uiverse.io by Madflows */
+    .button {
+      position: relative;
+      overflow: hidden;
+      height: 4rem;
+      padding: 0 2rem;
+      border-radius: 1.5rem;
+      background: #1E1E1E ;
+      background-size: 600%;
+      color:white;
+      border: none;
+      cursor: pointer;
+      padding: 0.9rem 2rem;
+      font-weight: 600;
+    }
+
+    .button:hover::before {
+      transform: scaleX(1);
+    }
+
+    .button-content {
+      position: relative;
+      z-index: 1;
+      
+    }
+    
+
+    .button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      width: 100%;
+      height: inherit;
+      border-radius: inherit;
+      background: linear-gradient(82.3deg,
+          rgb(233, 140, 93) 10.8%,
+          rgb(233, 238, 88) 94.3%);
+      transition: all 0.475s;
     }
   </style>
 </head>
@@ -687,7 +717,8 @@
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Poocholamadu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -722,16 +753,28 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="hero" style="background-: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwdQQ4vmTfX50mHzyv0Q84Wuznmg8kDffImh1pWfaglWSwbv4vQ8Dan2MmfjNxmUz0JG0&usqp=CAU);background-size: cover;">
-   
-    
+  <section id="hero"
+    style="background-image: url(./ChatGPT\ Image\ May\ 18\,\ 2025\,\ 10_45_24\ AM.png);background-size: cover; ">
+
+
     <div class="container">
       <div class="hero-content">
-        <h1 class="hero-title">Welcome to <span class="hero-accent">Poocholamadu</span> Village</h1>
-        <p class="hero-subtitle">Explore the rich heritage, vibrant culture and natural beauty of our traditional village</p>
+        <h1 class="hero-title ">Welcome to Poocholamadu</h1>
+        <p class="hero-subtitle text-light">Explore the rich heritage, vibrant culture and natural beauty of our
+          traditional
+          village</p>
         <div>
-          <a href="#about" class="btn hero-btn">Discover More</a>
-          <a href="#contact" class="btn hero-btn hero-btn-outline">Plan Your Visit</a>
+          <a href="#about">
+
+            <button class="button">
+              <span class="button-content">Explore More </span>
+            </button>
+
+          </a>
+          <a href="#contact"><button class="button">
+              <span class="button-content">Plan Your Visit</span>
+            </button>
+          </a>
         </div>
       </div>
     </div>
@@ -743,23 +786,29 @@
       <div class="section-title">
         <h2>About Poocholamadu</h2>
       </div>
-      
+
       <div class="row align-items-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
           <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Village Life in Poocholamadu">
+            <img
+              src="./ChatGPT Image May 16, 2025, 08_34_06 PM.png"
+              alt="Village Life in Poocholamadu">
           </div>
         </div>
-        
+
         <div class="col-lg-6">
           <div>
             <p class="mb-4">
-              Poocholamadu is a picturesque village nestled in the heart of nature, known for its rich cultural heritage and warm community spirit. With a history dating back several centuries, our village has preserved its traditional charm while embracing modern amenities.
+              Poocholamadu is a picturesque village nestled in the heart of nature, known for its rich cultural heritage
+              and warm community spirit. With a history dating back several centuries, our village has preserved its
+              traditional charm while embracing modern amenities.
             </p>
             <p class="mb-4">
-              The name "Poocholamadu" translates to "field of flowers," reflecting the natural beauty that surrounds our community. Our village is home to diverse flora and fauna, pristine water bodies, and rolling hills that create a mesmerizing landscape.
+              The name "Poocholamadu" came by the pond situated in our village , reflecting the natural beauty that surrounds our
+              community. Our village is home to diverse flora and fauna, pristine water bodies, and hills that
+              create a mesmerizing landscape.
             </p>
-            
+
             <div class="row mb-4">
               <div class="col-6 col-md-6 mb-3">
                 <div class="about-info-box">
@@ -770,23 +819,23 @@
               <div class="col-6 col-md-6 mb-3">
                 <div class="about-info-box">
                   <h5>Population</h5>
-                  <p class="mb-0">~5,000 residents</p>
+                  <p class="mb-0">4,500 residents</p>
                 </div>
               </div>
               <div class="col-6 col-md-6">
                 <div class="about-info-box">
                   <h5>Main Occupation</h5>
-                  <p class="mb-0">Agriculture & Crafts</p>
+                  <p class="mb-0">Agriculture And Business</p>
                 </div>
               </div>
               <div class="col-6 col-md-6">
                 <div class="about-info-box">
                   <h5>Famous For</h5>
-                  <p class="mb-0">Textiles & Festivals</p>
+                  <p class="mb-0">The 'Unity of the people'</p>
                 </div>
               </div>
             </div>
-            
+
             <a href="#contact" class="btn hero-btn">Plan Your Visit</a>
           </div>
         </div>
@@ -800,82 +849,70 @@
       <div class="section-title">
         <h2>Village Highlights</h2>
       </div>
-      
+
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="highlight-card">
             <div class="highlight-image">
-              <img src="https://images.unsplash.com/photo-1519112232436-9923c6ba3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Cultural Festivals">
+              <img
+                src="https://images.unsplash.com/photo-1519112232436-9923c6ba3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Cultural Festivals">
             </div>
             <div class="highlight-content">
               <span class="highlight-tag">Culture</span>
-              <h3>Traditional Festivals</h3>
-              <p>Experience our vibrant festivals celebrating harvest, seasons, and deities with music, dance, and rituals passed down through generations.</p>
+              <h3></h3>
+              <p>Experience our vibrant festivals celebrating harvest, seasons, and deities with music, dance, and
+                rituals passed down through generations.</p>
             </div>
           </div>
         </div>
-        
+
+       
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="highlight-card">
             <div class="highlight-image">
-              <img src="https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Textile Crafts">
-            </div>
-            <div class="highlight-content">
-              <span class="highlight-tag">Heritage</span>
-              <h3>Textile Crafts</h3>
-              <p>Discover our world-renowned handloom textiles and crafts, made using traditional techniques and natural dyes by skilled artisans.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="highlight-card">
-            <div class="highlight-image">
-              <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Natural Landscapes">
+              <img
+                src="./ChatGPT Image May 18, 2025, 08_16_18 PM.png"
+                alt="Natural Landscapes">
             </div>
             <div class="highlight-content">
               <span class="highlight-tag">Nature</span>
               <h3>Scenic Landscapes</h3>
-              <p>Explore the breathtaking natural beauty surrounding our village, from lush green fields to serene water bodies and majestic hills.</p>
+              <p>Explore the breathtaking natural beauty surrounding our village, from lush green fields to serene water
+                bodies and majestic hills.</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="highlight-card">
             <div class="highlight-image">
-              <img src="https://images.unsplash.com/photo-1584299574144-b9e5d53a68df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Organic Farming">
+              <img
+                src="https://images.deccanherald.com/deccanherald/import/sites/dh/files/articleimages/2020/06/20/file7b3jit8crw6159hem5i9-1592676383.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true"
+                alt="Organic Farming">
             </div>
             <div class="highlight-content">
               <span class="highlight-tag">Livelihood</span>
               <h3>Sustainable Agriculture</h3>
-              <p>Our farmers practice traditional organic farming methods that preserve soil health and produce nutritious crops season after season.</p>
+              <p>Our farmers practice traditional organic farming methods that preserve soil health and produce
+                nutritious crops season after season.</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="highlight-card">
             <div class="highlight-image">
-              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Local Cuisine">
+              <img
+                src="https://thumbs.dreamstime.com/b/cassava-plant-field-16032716.jpg"
+                alt="Local Cuisine">
             </div>
             <div class="highlight-content">
               <span class="highlight-tag">Cuisine</span>
               <h3>Traditional Food</h3>
-              <p>Savor our authentic local cuisine featuring recipes passed down through generations, made with fresh organic produce from our fields.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="highlight-card">
-            <div class="highlight-image">
-              <img src="https://images.unsplash.com/photo-1567443024551-f3e3a7b3ac98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Rural Experience">
-            </div>
-            <div class="highlight-content">
-              <span class="highlight-tag">Tourism</span>
-              <h3>Village Stay Experience</h3>
-              <p>Immerse yourself in our rural life with homestay options that offer an authentic glimpse of traditional village living and customs.</p>
+              <p>Savor our authentic local cuisine featuring recipes passed down through generations, made with fresh
+                organic produce from our fields.</p>
             </div>
           </div>
         </div>
@@ -889,73 +926,80 @@
       <div class="section-title">
         <h2>Gallery</h2>
       </div>
-      
+
       <div class="gallery-intro">
-        <p>Explore the beauty, culture, and daily life of Poocholamadu Village through our collection of photos and videos capturing memorable moments.</p>
+        <p>Explore the beauty, culture, and daily life of Poocholamadu Village through our collection of photos and
+          videos capturing memorable moments.</p>
       </div>
-      
-      <div class="gallery-filter">
-        <button class="gallery-filter-btn active" data-filter="all">All</button>
-        <button class="gallery-filter-btn" data-filter="culture">Culture</button>
-        <button class="gallery-filter-btn" data-filter="nature">Nature</button>
-        <button class="gallery-filter-btn" data-filter="people">People</button>
-        <button class="gallery-filter-btn" data-filter="festivals">Festivals</button>
-      </div>
-      
+
+     
+
       <div class="row gallery-container">
         <div class="col-md-6 col-lg-4 gallery-item" data-category="culture">
           <div class="gallery-item-inner">
-            <img src="https://images.unsplash.com/photo-1519112232436-9923c6ba3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Traditional Dance">
+            <img
+              src="https://images.unsplash.com/photo-1519112232436-9923c6ba3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Traditional Dance">
             <div class="gallery-item-caption">
               <h5>Traditional Folk Dance</h5>
               <p>Annual harvest festival celebrations</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 gallery-item" data-category="nature">
           <div class="gallery-item-inner">
-            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Village Landscape">
+            <img
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Village Landscape">
             <div class="gallery-item-caption">
               <h5>Misty Hills</h5>
               <p>Morning view from the village</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 gallery-item" data-category="people">
           <div class="gallery-item-inner">
-            <img src="https://images.unsplash.com/photo-1460036521480-ff49c08c2781?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Village Elder">
+            <img
+              src="https://images.unsplash.com/photo-1460036521480-ff49c08c2781?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Village Elder">
             <div class="gallery-item-caption">
               <h5>Village Elder</h5>
               <p>Sharing stories of the past</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 gallery-item" data-category="culture">
           <div class="gallery-item-inner">
-            <img src="https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Traditional Textile">
+            <img
+              src="https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Traditional Textile">
             <div class="gallery-item-caption">
               <h5>Handloom Weaving</h5>
               <p>Traditional textile making</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 gallery-item" data-category="festivals">
           <div class="gallery-item-inner">
-            <img src="https://images.unsplash.com/photo-1541593801762-237b992c3f9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Festival Lights">
+            <img
+              src="https://images.unsplash.com/photo-1541593801762-237b992c3f9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Festival Lights">
             <div class="gallery-item-caption">
               <h5>Festival of Lights</h5>
               <p>Annual celebration</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 gallery-item" data-category="nature">
           <div class="gallery-item-inner">
-            <img src="https://images.unsplash.com/photo-1444392061186-9fc38f84f726?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Village Lake">
+            <img
+              src="https://images.unsplash.com/photo-1444392061186-9fc38f84f726?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Village Lake">
             <div class="gallery-item-caption">
               <h5>Village Lake</h5>
               <p>Sunset by the water</p>
@@ -972,7 +1016,7 @@
       <div class="section-title">
         <h2>Local Businesses & Services</h2>
       </div>
-      
+
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="business-card">
@@ -984,7 +1028,7 @@
             <p class="mb-0"><strong>Hours:</strong> 9:00 AM - 6:00 PM</p>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="business-card">
             <span class="business-category">Grocery & Produce</span>
@@ -995,7 +1039,7 @@
             <p class="mb-0"><strong>Hours:</strong> 7:00 AM - 9:00 PM</p>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="business-card">
             <span class="business-category">Accommodation</span>
@@ -1006,29 +1050,31 @@
             <p class="mb-0"><strong>Hours:</strong> Check-in: 2:00 PM, Check-out: 11:00 AM</p>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="business-card">
             <span class="business-category">Food & Beverage</span>
             <h3>Hillside Cafe</h3>
-            <p>Local cuisine with panoramic views of the village, serving traditional dishes made with organic ingredients.</p>
+            <p>Local cuisine with panoramic views of the village, serving traditional dishes made with organic
+              ingredients.</p>
             <div class="business-divider"></div>
             <p class="mb-1"><strong>Contact:</strong> +91 9876543213</p>
             <p class="mb-0"><strong>Hours:</strong> 8:00 AM - 10:00 PM</p>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="business-card">
             <span class="business-category">Tourism</span>
             <h3>Farm Tourism Center</h3>
-            <p>Guided tours of traditional farming practices, offering hands-on agricultural experiences for visitors.</p>
+            <p>Guided tours of traditional farming practices, offering hands-on agricultural experiences for visitors.
+            </p>
             <div class="business-divider"></div>
             <p class="mb-1"><strong>Contact:</strong> +91 9876543214</p>
             <p class="mb-0"><strong>Hours:</strong> 10:00 AM - 5:00 PM</p>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="business-card">
             <span class="business-category">Services</span>
@@ -1040,7 +1086,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="text-center mt-5">
         <p class="mb-4">Interested in listing your business here? Contact the village administration office.</p>
         <a href="#contact" class="btn hero-btn">Contact Admin</a>
@@ -1054,12 +1100,14 @@
       <div class="section-title">
         <h2>Notable People</h2>
       </div>
-      
+
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="person-card">
             <div class="person-image">
-              <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Village Elder">
+              <img
+                src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Village Elder">
             </div>
             <div class="person-content">
               <span class="person-role">Cultural Guardian</span>
@@ -1073,16 +1121,19 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="person-card">
             <div class="person-image">
-              <img src="https://images.unsplash.com/photo-1569124589354-615739ae7896?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Master Weaver">
+              <img
+                src="https://images.unsplash.com/photo-1569124589354-615739ae7896?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Master Weaver">
             </div>
             <div class="person-content">
               <span class="person-role">Master Artisan</span>
               <h3>Lakshmi Devi</h3>
-              <p>Renowned textile artist whose handloom creations have been exhibited internationally and preserved traditional weaving techniques.</p>
+              <p>Renowned textile artist whose handloom creations have been exhibited internationally and preserved
+                traditional weaving techniques.</p>
               <div class="person-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1091,16 +1142,19 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="person-card">
             <div class="person-image">
-              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Agricultural Innovator">
+              <img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Agricultural Innovator">
             </div>
             <div class="person-content">
               <span class="person-role">Agricultural Innovator</span>
               <h3>Muthu Kumar</h3>
-              <p>Pioneer in sustainable farming practices who introduced organic methods that increased crop yield while preserving soil health.</p>
+              <p>Pioneer in sustainable farming practices who introduced organic methods that increased crop yield while
+                preserving soil health.</p>
               <div class="person-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1109,16 +1163,19 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="person-card">
             <div class="person-image">
-              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Educational Leader">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Educational Leader">
             </div>
             <div class="person-content">
               <span class="person-role">Educational Leader</span>
               <h3>Dr. Anita Rajan</h3>
-              <p>Founded the village's first school and scholarship program, helping hundreds of local children access quality education.</p>
+              <p>Founded the village's first school and scholarship program, helping hundreds of local children access
+                quality education.</p>
               <div class="person-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1127,16 +1184,19 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="person-card">
             <div class="person-image">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Medical Practitioner">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Medical Practitioner">
             </div>
             <div class="person-content">
               <span class="person-role">Health Pioneer</span>
               <h3>Dr. Poornima Sharma</h3>
-              <p>Established the village's first medical clinic, blending traditional herbal knowledge with modern medical practices.</p>
+              <p>Established the village's first medical clinic, blending traditional herbal knowledge with modern
+                medical practices.</p>
               <div class="person-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1145,16 +1205,19 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="person-card">
             <div class="person-image">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Village Leader">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Village Leader">
             </div>
             <div class="person-content">
               <span class="person-role">Community Leader</span>
               <h3>Thiru Chandran</h3>
-              <p>Former village head who led community development projects including water conservation and renewable energy initiatives.</p>
+              <p>Former village head who led community development projects including water conservation and renewable
+                energy initiatives.</p>
               <div class="person-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1173,19 +1236,20 @@
       <div class="section-title">
         <h2>Local Facilities</h2>
       </div>
-      
+
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="facility-card">
             <h3>Community Health Center</h3>
-            <p>24/7 medical facility with emergency services and regular specialty camps for the villagers and nearby areas.</p>
+            <p>24/7 medical facility with emergency services and regular specialty camps for the villagers and nearby
+              areas.</p>
             <div class="facility-info">
               <p><span class="facility-label">Hours:</span> Open 24 hours</p>
               <p><span class="facility-label">Location:</span> Main Road, Near Bus Stand</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="facility-card">
             <h3>Government Higher Secondary School</h3>
@@ -1196,29 +1260,31 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="facility-card">
             <h3>Public Library</h3>
-            <p>Collection of over 10,000 books, digital resources, and community reading programs for all age groups.</p>
+            <p>Collection of over 10,000 books, digital resources, and community reading programs for all age groups.
+            </p>
             <div class="facility-info">
               <p><span class="facility-label">Hours:</span> 10:00 AM - 7:00 PM (Closed Mondays)</p>
               <p><span class="facility-label">Location:</span> Cultural Complex, Central Square</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="facility-card">
             <h3>Sports Complex</h3>
-            <p>Indoor and outdoor facilities for cricket, volleyball, kabaddi, and athletics with regular tournaments.</p>
+            <p>Indoor and outdoor facilities for cricket, volleyball, kabaddi, and athletics with regular tournaments.
+            </p>
             <div class="facility-info">
               <p><span class="facility-label">Hours:</span> 5:00 AM - 9:00 PM</p>
               <p><span class="facility-label">Location:</span> Near River Bank, South Village</p>
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="facility-card">
             <h3>Community Center</h3>
@@ -1229,7 +1295,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="facility-card">
             <h3>Weekly Market Ground</h3>
@@ -1241,17 +1307,12 @@
           </div>
         </div>
       </div>
-      
+
       <div class="mt-5">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15352.31743721181!2d76.98975523387906!3d10.984727307969277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85824c7f860d9%3A0x1c9e3a86fac0d10!2sCoimbatore%2C%20Tamil%20Nadu%2C%20India!5e0!3m2!1sen!2sus!4v1647289373144!5m2!1sen!2sus" 
-          width="100%" 
-          height="400" 
-          style="border:0; border-radius: 8px;" 
-          allowfullscreen 
-          loading="lazy" 
-          class="shadow-lg">
-        </iframe>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.2649185476575!2d75.97293074054288!3d11.066158306402842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64c64f2a3711f%3A0x72b5f14ced651be2!2sPoocholamad%2C%20Kannamangalam%2C%20Kerala%20676304!5e0!3m2!1sen!2sin!4v1747565997477!5m2!1sen!2sin"   width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy"
+          class="shadow-lg" ></iframe>
+         
+        
       </div>
     </div>
   </section>
@@ -1262,23 +1323,23 @@
       <div class="section-title">
         <h2>Contact & Visitor Info</h2>
       </div>
-      
+
       <div class="row">
         <div class="col-lg-6 mb-4">
           <div class="contact-card p-4">
             <h3 class="mb-4">Get In Touch</h3>
-            
+
             <div class="contact-info-item">
               <div class="contact-info-icon">
                 <i class="fas fa-phone"></i>
               </div>
               <div>
                 <h5>Phone</h5>
-                <p>Village Office: +91 1234567890</p>
-                <p>Tourist Information: +91 9876543210</p>
+                <p>ward-member's Office: +91 1234567890</p>
+               
               </div>
             </div>
-            
+
             <div class="contact-info-item">
               <div class="contact-info-icon">
                 <i class="fas fa-envelope"></i>
@@ -1289,7 +1350,7 @@
                 <p>touristhelp@poocholamadu-village.org</p>
               </div>
             </div>
-            
+
             <div class="contact-info-item">
               <div class="contact-info-icon">
                 <i class="fas fa-map-marker-alt"></i>
@@ -1297,13 +1358,13 @@
               <div>
                 <h5>Address</h5>
                 <p>
-                  Poocholamadu Village,<br>
-                  Near Coimbatore,<br>
-                  Tamil Nadu, India - 641001
+                  Poocholamadu,<br>
+                  Near Achanambalam,vengara<br>
+                  pin code-676304
                 </p>
               </div>
             </div>
-            
+
             <div class="contact-info-item">
               <div class="contact-info-icon">
                 <i class="fas fa-clock"></i>
@@ -1312,16 +1373,16 @@
                 <h5>Village Office Hours</h5>
                 <p>Monday to Friday: 9:00 AM - 5:00 PM</p>
                 <p>Saturday: 10:00 AM - 1:00 PM</p>
-                <p>Sunday: Closed</p>
+                <p>Sunday:8:00 AM - 5:00 PM</p>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="col-lg-6 mb-4">
           <div class="contact-card p-4">
             <h3 class="mb-4">Send Us a Message</h3>
-            
+
             <form>
               <div class="row mb-3">
                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -1337,67 +1398,25 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="form-group mb-3">
                 <label for="subject" class="mb-1">Subject</label>
                 <input type="text" class="form-control" id="subject">
               </div>
-              
+
               <div class="form-group mb-3">
                 <label for="message" class="mb-1">Message</label>
                 <textarea class="form-control" id="message" rows="5"></textarea>
               </div>
-              
+
               <button type="submit" class="btn hero-btn w-100">Send Message</button>
             </form>
           </div>
         </div>
       </div>
-      
-      <div class="mt-5">
-        <h3 class="text-center mb-4">Travel Information</h3>
-        
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="travel-card">
-              <h4 class="mb-3">How to Reach</h4>
-              <ul class="list-unstyled">
-                <li class="mb-2"><i class="fas fa-plane-departure me-2 text-accent"></i> Nearest Airport: 45 km (Coimbatore International Airport)</li>
-                <li class="mb-2"><i class="fas fa-train me-2 text-accent"></i> Nearest Railway: 25 km (Coimbatore Junction)</li>
-                <li class="mb-2"><i class="fas fa-bus me-2 text-accent"></i> Local Bus Service: Every hour from Coimbatore</li>
-                <li class="mb-2"><i class="fas fa-taxi me-2 text-accent"></i> Taxi Services available at railway station & airport</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4">
-            <div class="travel-card">
-              <h4 class="mb-3">Accommodation</h4>
-              <ul class="list-unstyled">
-                <li class="mb-2"><i class="fas fa-home me-2 text-accent"></i> Heritage Homestays</li>
-                <li class="mb-2"><i class="fas fa-tractor me-2 text-accent"></i> Farm Retreats</li>
-                <li class="mb-2"><i class="fas fa-campground me-2 text-accent"></i> Eco Cottages</li>
-                <li class="mb-2"><i class="fas fa-building me-2 text-accent"></i> Village Guest House</li>
-                <li class="mb-2"><i class="fas fa-hotel me-2 text-accent"></i> Nearby Hotels (15 km)</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4">
-            <div class="travel-card">
-              <h4 class="mb-3">Best Time to Visit</h4>
-              <ul class="list-unstyled">
-                <li class="mb-2"><i class="fas fa-cloud-sun me-2 text-accent"></i> October to February: Pleasant Weather</li>
-                <li class="mb-2"><i class="fas fa-music me-2 text-accent"></i> May: Annual Festival Season</li>
-                <li class="mb-2"><i class="fas fa-leaf me-2 text-accent"></i> July-August: Lush Green Landscapes</li>
-                <li class="mb-2"><i class="fas fa-shopping-basket me-2 text-accent"></i> Weekends: Local Market Days</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
+
+     
 
   <!-- Footer -->
   <footer id="footer">
@@ -1405,8 +1424,9 @@
       <div class="row">
         <div class="col-lg-4 mb-5 mb-lg-0">
           <h3 class="footer-title">Poocholamadu Village</h3>
-          <p>A traditional village with a rich cultural heritage, nestled in the heart of nature, offering an authentic rural experience.</p>
-          
+          <p>A traditional village with a rich cultural heritage, nestled in the heart of nature, offering an authentic
+            rural experience.</p>
+
           <div class="footer-social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1414,7 +1434,7 @@
             <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
-        
+
         <div class="col-lg-8">
           <div class="row">
             <div class="col-sm-4 mb-5 mb-sm-0">
@@ -1426,7 +1446,7 @@
                 <li><a href="#gallery" class="footer-link">Gallery</a></li>
               </ul>
             </div>
-            
+
             <div class="col-sm-4 mb-5 mb-sm-0">
               <h4>Resources</h4>
               <ul class="list-unstyled">
@@ -1435,7 +1455,7 @@
                 <li><a href="#people" class="footer-link">Notable People</a></li>
               </ul>
             </div>
-            
+
             <div class="col-sm-4">
               <h4>Support</h4>
               <ul class="list-unstyled">
@@ -1447,46 +1467,46 @@
           </div>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-            <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Poocholamadu Village. All rights reserved.</p>
+            <p class="mb-0">&copy;
+              <script>document.write(new Date().getFullYear())</script> Poocholamadu Village. All rights reserved.
+            </p>
           </div>
-          
+
           <div class="col-md-6 text-center text-md-end">
             <p class="mb-0">Made with <i class="fas fa-heart text-accent"></i> in Poocholamadu</p>
           </div>
         </div>
       </div>
     </div>
+
     
-    <a href="#hero" class="back-to-top" id="backToTop">
-      <i class="fas fa-arrow-up"></i>
-    </a>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+
   <!-- Custom JS -->
   <script>
     // Back to top button functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const backToTopBtn = document.getElementById('backToTop');
-      
-      window.addEventListener('scroll', function() {
+
+      window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
           backToTopBtn.classList.add('active');
         } else {
           backToTopBtn.classList.remove('active');
         }
       });
-      
+
       // Navbar scroll behavior
       const navbar = document.querySelector('.navbar');
-      
-      window.addEventListener('scroll', function() {
+
+      window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
           navbar.style.padding = '0.5rem 0';
           navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
@@ -1495,20 +1515,20 @@
           navbar.style.boxShadow = 'none';
         }
       });
-      
+
       // Gallery filter functionality
       const filterBtns = document.querySelectorAll('.gallery-filter-btn');
       const galleryItems = document.querySelectorAll('.gallery-item');
-      
+
       filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           // Remove active class from all buttons
           filterBtns.forEach(btn => btn.classList.remove('active'));
           // Add active class to clicked button
           btn.classList.add('active');
-          
+
           const filterValue = btn.getAttribute('data-filter');
-          
+
           galleryItems.forEach(item => {
             if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
               item.style.display = 'block';
@@ -1521,4 +1541,1642 @@
     });
   </script>
 </body>
+
+</html>
+
+
+
+can you change the colour compination in this website by remaining the dark background theme
+I'll modify the color scheme while maintaining the dark background theme. Here's an updated color combination that keeps the dark aesthetic but introduces a fresh, harmonious palette:
+
+html
+<style>
+    /* Updated Color Scheme */
+    :root {
+      --dark-bg: #121212; /* Keeping the dark background */
+      --muted-bg: #1E1E1E; /* Slightly lighter dark for contrast */
+      --accent-color: #4ECDC4; /* Changed to a teal accent color */
+      --highlight-color: #FF6B6B; /* Changed to a coral highlight */
+      --text-color: #F0F0F0; /* Slightly brighter text for better readability */
+      --muted-text: #B0B0B0; /* Updated muted text color */
+      --border-color: #333; /* Keeping the dark borders */
+      --card-bg: #252525; /* Card background remains dark */
+    }
+
+    /* Rest of your CSS remains the same */
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-color);
+      /* ... */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--accent-color);
+      /* ... */
+    }
+
+    a {
+      color: var(--accent-color);
+      /* ... */
+    }
+
+    a:hover {
+      color: var(--highlight-color);
+    }
+
+    /* Update button colors to match new scheme */
+    .button::before {
+      background: linear-gradient(82.3deg,
+          var(--highlight-color) 10.8%,
+          var(--accent-color) 94.3%);
+    }
+
+    /* Update highlight tags */
+    .highlight-tag {
+      background-color: var(--highlight-color);
+      color: var(--dark-bg);
+    }
+
+    /* Update person roles */
+    .person-role {
+      background-color: var(--highlight-color);
+      color: var(--dark-bg);
+    }
+
+    /* Update facility labels */
+    .facility-label {
+      color: var(--highlight-color);
+    }
+</style>
+Key changes made:
+
+Accent Color: Changed from gold (#D4AF37) to a refreshing teal (#4ECDC4)
+
+Highlight Color: Changed from yellow (#FFC857) to coral (#FF6B6B)
+
+Text Colors: Slightly brightened the main text and muted text for better readability
+
+Button Gradient: Updated to use the new highlight and accent colors
+
+Tags & Labels: Updated to use the new highlight color
+
+This new color scheme:
+
+Maintains excellent contrast and readability
+
+Keeps the sophisticated dark theme
+
+Introduces a more modern, harmonious palette
+
+Uses complementary colors (teal and coral) that work well together
+
+Preserves all the original functionality while refreshing the look
+
+The teal (#4ECDC4) serves as the primary accent color for headings and links, while the coral (#FF6B6B) is used for highlights, tags, and interactive elements. The dark backgrounds remain unchanged to maintain the theme's core aesthetic.
+
+can you give me the fully updated code
+Here's the fully updated code with the new color scheme while maintaining the dark background theme:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poocholamadu Village - Official Website</title>
+  <meta name="description" content="Welcome to Poocholamadu Village - Explore our heritage, culture, and community">
+  <meta name="author" content="Poocholamadu Village">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Poocholamadu Village - Official Website">
+  <meta property="og:description" content="Explore the heritage, culture, and community of Poocholamadu Village">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@lovable_dev">
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Custom CSS */
+    :root {
+      --dark-bg: #121212;
+      --muted-bg: #1E1E1E;
+      --accent-color: #4ECDC4;
+      --highlight-color: #FF6B6B;
+      --text-color: #F0F0F0;
+      --muted-text: #B0B0B0;
+      --border-color: #333;
+      --card-bg: #252525;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--highlight-color);
+    }
+
+    .section-padding {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title h2 {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      padding: 0 1rem;
+      font-size: 2.5rem;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: rgba(18, 18, 18, 0.95) !important;
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--accent-color) !important;
+    }
+
+    .nav-link {
+      color: var(--text-color) !important;
+      margin: 0 0.5rem;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--accent-color) !important;
+    }
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::before {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    #hero {
+      background-color: var(--dark-bg);
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+
+    .hero-accent {
+      color: var(--accent-color);
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--muted-text);
+    }
+
+    .hero-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .carousel-item img {
+      object-fit: cover;
+      width: 100%;
+      height: 100vh;
+      filter: brightness(0.3);
+    }
+
+    /* About Section */
+    #about {
+      background-color: var(--muted-bg);
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 400px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, var(--dark-bg), transparent);
+      opacity: 0.6;
+    }
+
+    .about-info-box {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Highlights Section */
+    #highlights {
+      background-color: var(--dark-bg);
+    }
+
+    .highlight-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      height: 100%;
+      border: 1px solid var(--border-color);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+    }
+
+    .highlight-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .highlight-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .highlight-card:hover .highlight-image img {
+      transform: scale(1.1);
+    }
+
+    .highlight-content {
+      padding: 1.5rem;
+    }
+
+    .highlight-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background-color: var(--highlight-color);
+      color: var(--dark-bg);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    /* Gallery Section */
+    #gallery {
+      background-color: var(--muted-bg);
+    }
+
+    .gallery-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-filter-btn {
+      background-color: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-filter-btn.active,
+    .gallery-filter-btn:hover {
+      background-color: var(--accent-color);
+      color: var(--dark-bg);
+      border-color: var(--accent-color);
+    }
+
+    .gallery-item {
+      padding: 0.5rem;
+    }
+
+    .gallery-item-inner {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:hover video {
+      transform: scale(1.1);
+    }
+
+    .gallery-item-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      padding: 1rem;
+      color: var(--text-color);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-item-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Businesses Section */
+    #businesses {
+      background-color: var(--dark-bg);
+    }
+
+    .business-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      height: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .business-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+    }
+
+    .business-category {
+      display: inline-block;
+      background-color: var(--highlight-color);
+      color: var(--dark-bg);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      margin-bottom: 0.75rem;
+    }
+
+    .business-divider {
+      border-top: 1px solid var(--border-color);
+      margin: 1rem 0;
+    }
+
+    /* People Section */
+    #people {
+      background-color: var(--muted-bg);
+    }
+
+    .person-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      height: 100%;
+    }
+
+    .person-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+    }
+
+    .person-image {
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .person-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .person-card:hover .person-image img {
+      transform: scale(1.1);
+    }
+
+    .person-content {
+      padding: 1.5rem;
+    }
+
+    .person-role {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background-color: var(--highlight-color);
+      color: var(--dark-bg);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .person-social {
+      margin-top: 1rem;
+    }
+
+    .person-social a {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      background-color: var(--dark-bg);
+      color: var(--text-color);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .person-social a:hover {
+      background-color: var(--accent-color);
+      color: var(--dark-bg);
+    }
+
+    /* Facilities Section */
+    #facilities {
+      background-color: var(--dark-bg);
+    }
+
+    .facility-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      height: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .facility-card:hover {
+      border-color: var(--accent-color);
+      transform: translateY(-5px);
+    }
+
+    .facility-info {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .facility-label {
+      color: var(--highlight-color);
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    /* Contact Section */
+    #contact {
+      background-color: var(--muted-bg);
+    }
+
+    .contact-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-info-item {
+      display: flex;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--dark-bg);
+      color: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-right: 1rem;
+    }
+
+    .form-control {
+      background-color: var(--dark-bg) !important;
+      border: 1px solid var(--border-color) !important;
+      color: var(--text-color) !important;
+      padding: 0.75rem !important;
+    }
+
+    .form-control:focus {
+      box-shadow: none !important;
+      border-color: var(--accent-color) !important;
+    }
+
+    .travel-card {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      height: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer */
+    #footer {
+      background-color: var(--dark-bg);
+      padding: 5rem 0 2rem;
+    }
+
+    .footer-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-link {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: var(--text-color);
+    }
+
+    .footer-link:hover {
+      color: var(--accent-color);
+      padding-left: 5px;
+    }
+
+    .footer-social {
+      display: flex;
+      margin-top: 1.5rem;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border-radius: 50%;
+      margin-right: 0.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background-color: var(--accent-color);
+      color: var(--dark-bg);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent-color);
+      color: var(--dark-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--highlight-color);
+      transform: translateY(-5px);
+    }
+
+    /* From Uiverse.io by Madflows */
+    .button {
+      position: relative;
+      overflow: hidden;
+      height: 4rem;
+      padding: 0 2rem;
+      border-radius: 1.5rem;
+      background: #1E1E1E ;
+      background-size: 600%;
+      color:white;
+      border: none;
+      cursor: pointer;
+      padding: 0.9rem 2rem;
+      font-weight: 600;
+    }
+
+    .button:hover::before {
+      transform: scaleX(1);
+    }
+
+    .button-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      width: 100%;
+      height: inherit;
+      border-radius: inherit;
+      background: linear-gradient(82.3deg,
+          var(--highlight-color) 10.8%,
+          var(--accent-color) 94.3%);
+      transition: all 0.475s;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .section-padding {
+        padding: 3rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Poocholamadu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#hero">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#highlights">Highlights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#businesses">Businesses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#people">People</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#facilities">Facilities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero"
+    style="background-image: url(./ChatGPT\ Image\ May\ 18\,\ 2025\,\ 10_45_24\ AM.png);background-size: cover; ">
+
+
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title ">Welcome to <span class="hero-accent text-light">Poocholamadu</span> Village</h1>
+        <p class="hero-subtitle text-light">Explore the rich heritage, vibrant culture and natural beauty of our
+          traditional
+          village</p>
+        <div>
+          <a href="#about">
+
+            <button class="button">
+              <span class="button-content">Explore More </span>
+            </button>
+
+          </a>
+          <a href="#contact"><button class="button">
+              <span class="button-content">Plan Your Visit</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Poocholamadu</h2>
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="about-image">
+            <img
+              src="./ChatGPT Image May 16, 2025, 08_34_06 PM.png"
+              alt="Village Life in Poocholamadu">
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div>
+            <p class="mb-4">
+              Poocholamadu is a picturesque village nestled in the heart of nature, known for its rich cultural heritage
+              and warm community spirit. With a history dating back several centuries, our village has preserved its
+              traditional charm while embracing modern amenities.
+            </p>
+            <p class="mb-4">
+              The name "Poocholamadu" came by the pond situated in our village , reflecting the natural beauty that surrounds our
+              community. Our village is home to diverse flora and fauna, pristine water bodies, and hills that
+              create a mesmerizing landscape.
+            </p>
+
+            <div class="row mb-4">
+              <div class="col-6 col-md-6 mb-3">
+                <div class="about-info-box">
+                  <h5>Founded</h5>
+                  <p class="mb-0">Early 18th century</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-6 mb-3">
+                <div class="about-info-box">
+                  <h5>Population</h5>
+                  <p class="mb-0">4,500 residents</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-6">
+                <div class="about-info-box">
+                  <h5>Main Occupation</h5>
+                  <p class="mb-0">Agriculture And Business</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-6">
+                <div class="about-info-box">
+                  <h5>Famous For</h5>
+                  <p class="mb-0">The 'Unity of the people'</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#contact" class="btn hero-btn">Plan Your Visit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section id="highlights" class="section-padding">
+    <div class="container">
+      <div class="section-title">
+        <h2>Village Highlights</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="highlight-card">
+            <div class="highlight-image">
+              <img
+                src="https://images.unsplash.com/photo-1519112232436-9923c6ba3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Cultural Festivals">
+            </div>
+            <div class="highlight-content">
+              <span class="highlight-tag">Culture</span>
+              <h3></h3>
+              <p>Experience our vibrant festivals celebrating harvest, seasons, and deities with music, dance, and
+                rituals passed down through generations.</p>
+            </div>
+          </div>
+        </div>
+
+       
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="highlight-card">
+            <div class="highlight-image">
+              <img
+                src="./ChatGPT Image May 18, 2025, 08_16_18 PM.png"
+                alt="Natural Landscapes">
+            </div>
+            <div class="highlight-content">
+              <span class="highlight-tag">Nature</span>
+              <h3>Scenic Landscapes</h3>
+              <p>Explore the breathtaking natural beauty surrounding our village, from lush green fields to serene water
+                bodies and majestic hills.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="highlight-card">
+            <div class="highlight-image">
+              <img
+                src="https://images.deccanherald.com/deccanherald/import/sites/dh/files/articleimages/2020/06/20/file7b3jit8crw6159hem5i9-1592676383.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true"
+                alt="Organic Farming">
+            </div>
+            <div class="highlight-content">
+              <span class="highlight-tag">Livelihood</span>
+              <h3>Sustainable Agriculture</h3>
+              <p>Our farmers practice traditional organic farming methods that preserve soil health and produce
+                nutritious crops season after season.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="highlight-card">
+            <div class="highlight-image">
+              <img
+                src="https://thumbs.dreamstime.com/b/cassava-plant-field-16032716.jpg"
+                alt="Local Cuisine">
+            </div>
+            <div class="highlight-content">
+              <span class="highlight-tag">Cuisine</span>
+              <h3>Traditional Food</h3>
+              <p>Savor our authentic local cuisine featuring recipes passed down through generations, made with fresh
+                organic produce from our fields.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section-padding">
+    <div class="container">
+      <div class="section-title">
+        <h2>Gallery</h2>
+      </div>
+
+      <div class="gallery-intro">
+        <p>Explore the beauty, culture, and daily life of Poocholamadu Village through our collection of photos and
+          videos capturing memorable moments.</p>
+      </div>
+
+     
+
+      <div class="row gallery-container">
+        <div class="col-md-6 col-lg-4 gallery-item" data-category="culture">
+          <div class="gallery-item-inner">
+            <img
+              src="https://images.unsplash.com/photo-1519112232436-9923c6ba3d26?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Traditional Dance">
+            <div class="gallery-item-caption">
+              <h5>Traditional Folk Dance</h5>
+              <p>Annual harvest festival celebrations</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-item" data-category="nature">
+          <div class="gallery-item-inner">
+            <img
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Village Landscape">
+            <div class="gallery-item-caption">
+              <h5>Misty Hills</h5>
+              <p>Morning view from the village</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-item" data-category="people">
+          <div class="gallery-item-inner">
+            <img
+              src="https://images.unsplash.com/photo-1460036521480-ff49c08c2781?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Village Elder">
+            <div class="gallery-item-caption">
+              <h5>Village Elder</h5>
+              <p>Sharing stories of the past</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-item" data-category="culture">
+          <div class="gallery-item-inner">
+            <img
+              src="https://images.unsplash.com/photo-1547637589-f54c34f5d7a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Traditional Textile">
+            <div class="gallery-item-caption">
+              <h5>Handloom Weaving</h5>
+              <p>Traditional textile making</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-item" data-category="festivals">
+          <div class="gallery-item-inner">
+            <img
+              src="https://images.unsplash.com/photo-1541593801762-237b992c3f9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Festival Lights">
+            <div class="gallery-item-caption">
+              <h5>Festival of Lights</h5>
+              <p>Annual celebration</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 gallery-item" data-category="nature">
+          <div class="gallery-item-inner">
+            <img
+              src="https://images.unsplash.com/photo-1444392061186-9fc38f84f726?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Village Lake">
+            <div class="gallery-item-caption">
+              <h5>Village Lake</h5>
+              <p>Sunset by the water</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Businesses Section -->
+  <section id="businesses" class="section-padding">
+    <div class="container">
+      <div class="section-title">
+        <h2>Local Businesses & Services</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="business-card">
+            <span class="business-category">Arts & Crafts</span>
+            <h3>Village Crafts Cooperative</h3>
+            <p>Traditional handmade textiles, pottery, and art created by local artisans using ancient techniques.</p>
+            <div class="business-divider"></div>
+            <p class="mb-1"><strong>Contact:</strong> +91 9876543210</p>
+            <p class="mb-0"><strong>Hours:</strong> 9:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="business-card">
+            <span class="business-category">Grocery & Produce</span>
+            <h3>Poocholamadu Fresh Market</h3>
+            <p>Local organic fruits, vegetables, and daily essentials sourced directly from village farmers.</p>
+            <div class="business-divider"></div>
+            <p class="mb-1"><strong>Contact:</strong> +91 9876543211</p>
+            <p class="mb-0"><strong>Hours:</strong> 7:00 AM - 9:00 PM</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="business-card">
+            <span class="business-category">Accommodation</span>
+            <h3>Heritage Homestay</h3>
+            <p>Traditional house with modern amenities for visitors seeking an authentic village experience.</p>
+            <div class="business-divider"></div>
+            <p class="mb-1"><strong>Contact:</strong> +91 9876543212</p>
+            <p class="mb-0"><strong>Hours:</strong> Check-in: 2:00 PM, Check-out: 11:00 AM</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="business-card">
+            <span class="business-category">Food & Beverage</span>
+            <h3>Hillside Cafe</h3>
+            <p>Local cuisine with panoramic views of the village, serving traditional dishes made with organic
+              ingredients.</p>
+            <div class="business-divider"></div>
+            <p class="mb-1"><strong>Contact:</strong> +91 9876543213</p>
+            <p class="mb-0"><strong>Hours:</strong> 8:00 AM - 10:00 PM</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="business-card">
+            <span class="business-category">Tourism</span>
+            <h3>Farm Tourism Center</h3>
+            <p>Guided tours of traditional farming practices, offering hands-on agricultural experiences for visitors.
+            </p>
+            <div class="business-divider"></div>
+            <p class="mb-1"><strong>Contact:</strong> +91 9876543214</p>
+            <p class="mb-0"><strong>Hours:</strong> 10:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="business-card">
+            <span class="business-category">Services</span>
+            <h3>Village Tech Hub</h3>
+            <p>Internet access, printing, and digital services providing connectivity for both locals and visitors.</p>
+            <div class="business-divider"></div>
+            <p class="mb-1"><strong>Contact:</strong> +91 9876543215</p>
+            <p class="mb-0"><strong>Hours:</strong> 9:00 AM - 8:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <p class="mb-4">Interested in listing your business here? Contact the village administration office.</p>
+        <a href="#contact" class="btn hero-btn">Contact Admin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notable People Section -->
+  <section id="people" class="section-padding">
+    <div class="container">
+      <div class="section-title">
+        <h2>Notable People</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="person-card">
+            <div class="person-image">
+              <img
+                src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Village Elder">
+            </div>
+            <div class="person-content">
+              <span class="person-role">Cultural Guardian</span>
+              <h3>Rajasekaran Pillai</h3>
+              <p>The oldest living resident who has preserved ancient folk songs and stories for future generations.</p>
+              <div class="person-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="person-card">
+            <div class="person-image">
+              <img
+                src="https://images.unsplash.com/photo-1569124589354-615739ae7896?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Master Weaver">
+            </div>
+            <div class="person-content">
+              <span class="person-role">Master Artisan</span>
+              <h3>Lakshmi Devi</h3>
+              <p>Renowned textile artist whose handloom creations have been exhibited internationally and preserved
+                traditional weaving techniques.</p>
+              <div class="person-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="person-card">
+            <div class="person-image">
+              <img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Agricultural Innovator">
+            </div>
+            <div class="person-content">
+              <span class="person-role">Agricultural Innovator</span>
+              <h3>Muthu Kumar</h3>
+              <p>Pioneer in sustainable farming practices who introduced organic methods that increased crop yield while
+                preserving soil health.</p>
+              <div class="person-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="person-card">
+            <div class="person-image">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Educational Leader">
+            </div>
+            <div class="person-content">
+              <span class="person-role">Educational Leader</span>
+              <h3>Dr. Anita Rajan</h3>
+              <p>Founded the village's first school and scholarship program, helping hundreds of local children access
+                quality education.</p>
+              <div class="person-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="person-card">
+            <div class="person-image">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Medical Practitioner">
+            </div>
+            <div class="person-content">
+              <span class="person-role">Health Pioneer</span>
+              <h3>Dr. Poornima Sharma</h3>
+              <p>Established the village's first medical clinic, blending traditional herbal knowledge with modern
+                medical practices.</p>
+              <div class="person-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="person-card">
+            <div class="person-image">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                alt="Village Leader">
+            </div>
+            <div class="person-content">
+              <span class="person-role">Community Leader</span>
+              <h3>Thiru Chandran</h3>
+              <p>Former village head who led community development projects including water conservation and renewable
+                energy initiatives.</p>
+              <div class="person-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section id="facilities" class="section-padding">
+    <div class="container">
+      <div class="section-title">
+        <h2>Local Facilities</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="facility-card">
+            <h3>Community Health Center</h3>
+            <p>24/7 medical facility with emergency services and regular specialty camps for the villagers and nearby
+              areas.</p>
+            <div class="facility-info">
+              <p><span class="facility-label">Hours:</span> Open 24 hours</p>
+              <p><span class="facility-label">Location:</span> Main Road, Near Bus Stand</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="facility-card">
+            <h3>Government Higher Secondary School</h3>
+            <p>Established in 1965, offering education from Grades 1-12 with computer lab and sports facilities.</p>
+            <div class="facility-info">
+              <p><span class="facility-label">Hours:</span> 8:00 AM - 4:30 PM (Weekdays)</p>
+              <p><span class="facility-label">Location:</span> School Road, West Village</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="facility-card">
+            <h3>Public Library</h3>
+            <p>Collection of over 10,000 books, digital resources, and community reading programs for all age groups.
+            </p>
+            <div class="facility-info">
+              <p><span class="facility-label">Hours:</span> 10:00 AM - 7:00 PM (Closed Mondays)</p>
+              <p><span class="facility-label">Location:</span> Cultural Complex, Central Square</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="facility-card">
+            <h3>Sports Complex</h3>
+            <p>Indoor and outdoor facilities for cricket, volleyball, kabaddi, and athletics with regular tournaments.
+            </p>
+            <div class="facility-info">
+              <p><span class="facility-label">Hours:</span> 5:00 AM - 9:00 PM</p>
+              <p><span class="facility-label">Location:</span> Near River Bank, South Village</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="facility-card">
+            <h3>Community Center</h3>
+            <p>Multi-purpose hall for events, gatherings, and administrative meetings with audio-visual equipment.</p>
+            <div class="facility-info">
+              <p><span class="facility-label">Hours:</span> 9:00 AM - 9:00 PM</p>
+              <p><span class="facility-label">Location:</span> Village Center</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="facility-card">
+            <h3>Weekly Market Ground</h3>
+            <p>Host to the famous Friday market, featuring local produce and crafts from surrounding villages.</p>
+            <div class="facility-info">
+              <p><span class="facility-label">Hours:</span> Market Day: Friday 6:00 AM - 2:00 PM</p>
+              <p><span class="facility-label">Location:</span> East Village Junction</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.2649185476575!2d75.97293074054288!3d11.066158306402842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64c64f2a3711f%3A0x72b5f14ced651be2!2sPoocholamad%2C%20Kannamangalam%2C%20Kerala%20676304!5e0!3m2!1sen!2sin!4v1747565997477!5m2!1sen!2sin"   width="100%" height="400" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy"
+          class="shadow-lg" ></iframe>
+         
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact & Visitor Info</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="contact-card p-4">
+            <h3 class="mb-4">Get In Touch</h3>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h5>Phone</h5>
+                <p>ward-member's Office: +91 1234567890</p>
+               
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h5>Email</h5>
+                <p>info@poocholamadu-village.org</p>
+                <p>touristhelp@poocholamadu-village.org</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h5>Address</h5>
+                <p>
+                  Poocholamadu,<br>
+                  Near Achanambalam,vengara<br>
+                  pin code-676304
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h5>Village Office Hours</h5>
+                <p>Monday to Friday: 9:00 AM - 5:00 PM</p>
+                <p>Saturday: 10:00 AM - 1:00 PM</p>
+                <p>Sunday:8:00 AM - 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="contact-card p-4">
+            <h3 class="mb-4">Send Us a Message</h3>
+
+            <form>
+              <div class="row mb-3">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <div class="form-group">
+                    <label for="name" class="mb-1">Name</label>
+                    <input type="text" class="form-control" id="name">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email" class="mb-1">Email</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="subject" class="mb-1">Subject</label>
+                <input type="text" class="form-control" id="subject">
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="message" class="mb-1">Message</label>
+                <textarea class="form-control" id="message" rows="5"></textarea>
+              </div>
+
+              <button type="submit" class="btn hero-btn w-100">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
+
+     
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h3 class="footer-title">Poocholamadu Village</h3>
+          <p>A traditional village with a rich cultural heritage, nestled in the heart of nature, offering an authentic
+            rural experience.</p>
+
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-sm-4 mb-5 mb-sm-0">
+              <h4>Quick Links</h4>
+              <ul class="list-unstyled">
+                <li><a href="#home" class="footer-link">Home</a></li>
+                <li><a href="#about" class="footer-link">About Us</a></li>
+                <li><a href="#highlights" class="footer-link">Village Highlights</a></li>
+                <li><a href="#gallery" class="footer-link">Gallery</a></li>
+              </ul>
+            </div>
+
+            <div class="col-sm-4 mb-5 mb-sm-0">
+              <h4>Resources</h4>
+              <ul class="list-unstyled">
+                <li><a href="#facilities" class="footer-link">Facilities</a></li>
+                <li><a href="#businesses" class="footer-link">Local Businesses</a></li>
+                <li><a href="#people" class="footer-link">Notable People</a></li>
+              </ul>
+            </div>
+
+            <div class="col-sm-4">
+              <h4>Support</h4>
+              <ul class="list-unstyled">
+                <li><a href="#contact" class="footer-link">Contact Us</a></li>
+                <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                <li><a href="#" class="footer-link">Terms of Use</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <p class="mb-0">&copy;
+              <script>document.write(new Date().getFullYear())</script> Poocholamadu Village. All rights reserved.
+            </p>
+          </div>
+
+          <div class="col-md-6 text-center text-md-end">
+            <p class="mb-0">Made with <i class="fas fa-heart text-accent"></i> in Poocholamadu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    // Back to top button functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const backToTopBtn = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('active');
+        } else {
+          backToTopBtn.classList.remove('active');
+        }
+      });
+
+      // Navbar scroll behavior
+      const navbar = document.querySelector('.navbar');
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+          navbar.style.padding = '0.5rem 0';
+          navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        } else {
+          navbar.style.padding = '1rem 0';
+          navbar.style.boxShadow = 'none';
+        }
+      });
+
+      // Gallery filter functionality
+      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterBtns.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+
+          const filterValue = btn.getAttribute('data-filter');
+
+          galleryItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
 </html>
