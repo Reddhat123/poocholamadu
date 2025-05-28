@@ -85,6 +85,10 @@
       color: var(--accent-color);
       font-weight: 800;
     }
+    .h1{
+      color: #2c7873;
+    }
+    
 
     a {
       color: var(--accent-color);
@@ -814,11 +818,7 @@
     }
 
     /* about section */
-   {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
@@ -1089,10 +1089,10 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Poocholamadu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      <a class="navbar-brand" href="#" style="color: #2c7873;" >Poocholamadu</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon text-warning"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -1186,7 +1186,7 @@
 
             <div class="main-content">
                 <div class="image-container">
-                    <img src="/ChatGPT Image May 18, 2025, 10_45_24 AM.png" alt="Village Life in Poocholamadu">
+                    <img src="./ChatGPT Image May 18, 2025, 10_45_24 AM.png" alt="Village Life in Poocholamadu">
                 </div>
 
                 <div class="text-content">
@@ -1223,8 +1223,6 @@
                             <p>The 'Unity of the people'</p>
                         </div>
                     </div>
-
-                    <button class="cta-button" onclick="alert('Contact us to plan your visit!')">Plan Your Visit</button>
                 </div>
             </div>
         </div>
@@ -1235,7 +1233,7 @@
   <section id="highlights" class="section-padding">
     <div class="container">
       <div class="section-title">
-        <h2>Village Highlights</h2>
+        <h2 style="color: #66a5ad;">Village Highlights</h2>
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-4">
@@ -1289,7 +1287,7 @@
   <section id="gallery" class="section-padding">
     <div class="container">
       <div class="section-title">
-        <h2>Gallery</h2>
+        <h2 style="color: #66a5ad;">Gallery</h2>
       </div>
 
       <div class="gallery-intro">
@@ -1369,7 +1367,7 @@
   <section id="businesses" class="section-padding">
     <div class="container">
       <div class="section-title">
-        <h2>Local Businesses & Services</h2>
+        <h2 style="color: #66a5ad;">Local Businesses & Services</h2>
       </div>
 
       <div class="row">
@@ -1424,7 +1422,7 @@
   <section id="people" class="section-padding">
     <div class="container">
       <div class="section-title">
-        <h2>Notable People</h2>
+        <h2 style="color: #66a5ad;">Notable People</h2>
       </div>
 
       <div class="row">
@@ -1436,8 +1434,8 @@
                 alt="Village Elder">
             </div>
             <div class="person-content">
-              <span class="person-role">Cultural Guardian</span>
-              <h3>Rajasekaran Pillai</h3>
+              <span class="person-role">Ward Member</span>
+              <h3>Abdurahiman Thattayil</h3>
               <p>The oldest living resident who has preserved ancient folk songs and stories for future generations.</p>
               <div class="person-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1455,7 +1453,7 @@
   <section id="facilities" class="section-padding">
     <div class="container">
       <div class="section-title">
-        <h2>Local Facilities</h2>
+        <h2 style="color: #66a5ad;">Local Facilities</h2>
       </div>
 
       <div class="row">
@@ -1544,7 +1542,7 @@
   <section id="contact" class="section-padding">
     <div class="container">
       <div class="section-title">
-        <h2>Contact & Visitor Info</h2>
+        <h2 style="color: #66a5ad;">Contact & Visitor Info</h2>
       </div>
 
       <div class="row">
@@ -1710,57 +1708,8 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom JS -->
-  <script>
-    // Back to top button functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      const backToTopBtn = document.getElementById('backToTop');
+  
 
-      window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 300) {
-          backToTopBtn.classList.add('active');
-        } else {
-          backToTopBtn.classList.remove('active');
-        }
-      });
-
-      // Navbar scroll behavior
-      const navbar = document.querySelector('.navbar');
-
-      window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-          navbar.style.padding = '0.5rem 0';
-          navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        } else {
-          navbar.style.padding = '1rem 0';
-          navbar.style.boxShadow = 'none';
-        }
-      });
-
-      // Gallery filter functionality
-      const filterBtns = document.querySelectorAll('.gallery-filter-btn');
-      const galleryItems = document.querySelectorAll('.gallery-item');
-
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Remove active class from all buttons
-          filterBtns.forEach(btn => btn.classList.remove('active'));
-          // Add active class to clicked button
-          btn.classList.add('active');
-
-          const filterValue = btn.getAttribute('data-filter');
-
-          galleryItems.forEach(item => {
-            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      });
-    });
-  </script>
 </body>
 
 </html>
